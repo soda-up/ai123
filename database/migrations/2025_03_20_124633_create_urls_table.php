@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('title');
-            $table->string('cover')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('is_recommended')->default(false)->index('recommended');
             $table->string('url');
             $table->enum('status', ['enabled', 'disabled'])->default('enabled')->index('status');

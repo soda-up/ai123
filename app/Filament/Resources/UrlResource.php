@@ -44,24 +44,12 @@ class UrlResource extends Resource
                     ->label('图标(150*150)')
                     ->required()
                     ->columnSpan(10),
-                Forms\Components\FileUpload::make('cover')
-                    ->disk('public')
-                    ->directory(config('app.env') . '/fuli/cover/' . now()->format('Y/m/d'))
-                    ->image()
-                    ->imageEditor()
-                    ->imageEditorAspectRatios([
-                        '16:9',
-                        '4:3',
-                        '1:1',
-                    ])
-                    ->label('封面(400*600)')
-                    ->required()
-                    ->columnSpan(10),
                 Forms\Components\Toggle::make('is_recommended')
                     ->label('推荐')
                     ->default(true)
                     ->inline(false)
                     ->columnSpan(12),
+                Forms\Components\Textarea::make('description')->label('描述')->columnSpan(10),
                 Forms\Components\Radio::make('status')
                     ->required()
                     ->options([
